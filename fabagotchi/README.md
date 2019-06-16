@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Fabagotchi
+>***A joint project by***
 
-## Available Scripts
+| Name  | Email |
+|-------|-------|
+|Andy Sims|acsims@tuta.io|
+|Cooper Viktor|im.cooperviktor@gmail.com|
+---
 
-In the project directory, you can run:
+Our *~~Tamagotchi~~* **Fabagotchi** is an homage to the simple days of 90s browser games, gameboys, Pokémon and such awesome things.
 
-### `npm start`
+It is a chance for us to work on a joint project that isn't a marked requirment under a strict time frame, so we can prepare ourselves for a project based future.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+And a chance to build something totally fun!
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+---
+---
+# Links
 
-### `npm test`
+[GitHub](https://github.com/CoopsCodes/Fabagotchi "Repo")
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Figma](https://www.figma.com/file/P8r9jN8lomtu1y5WtGlSSgTJ/Fabagotchi?node-id=0%3A1 "Design Board")
 
-### `npm run build`
+[Trello](https://trello.com/b/dS9CduKA/fabagotchi "Project Management Board")
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+---
+# Concept
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+The Fabagotchi is a web based digital pet that you Adopt from the Fabagotchi Pound.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you see an egg you like, you adopt it and care for it through the various stages of its lifecycle.
 
-### `npm run eject`
+But beware, if you dont look after it it'll die!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
