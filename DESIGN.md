@@ -36,7 +36,7 @@ attributes.
 
 * **User Actions** can interfere with the flow of timed events:
     1. Feeding will cause the hunger to decrease.
-    2. Cleaning droppings will prevent them from decreasing health.
+    2. Cleaning droppings will prevent health from decreasing.
 
 ### v0.2.0 : Persistence
 
@@ -58,7 +58,7 @@ alive, increases with life stages.
 
 * The sprite that represents the fabagotchi changes with its life-cycle.
 
-### Potenital features in future
+### Potential future features
 
 * Interaction between users
 * Animated sprites
