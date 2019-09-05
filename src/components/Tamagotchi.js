@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
-class Tamagotchi extends Component {
-  feed = () => {
-    this.props.dispatch({ type: "HUNGER" });
-  };
-
+export default class Tamagotchi extends Component {
   render() {
     return (
       <div>
@@ -18,9 +13,3 @@ class Tamagotchi extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  hunger: state.hunger
-});
-
-export default connect(mapStateToProps)(Tamagotchi);
