@@ -2,7 +2,7 @@ import React from "react";
 import Tamagotchi from "./components/Tamagotchi";
 import "./App.css";
 import { FabProvider } from "./context";
-// import axios from "axios";
+import axios from "axios";
 
 // setTimeout(async () => {
 //   const newFab = await callRulesApi(store.Fabagotchi)
@@ -10,11 +10,13 @@ import { FabProvider } from "./context";
 //   store.Fabagotchi = newFab
 // }, 30000)
 
-function App() {
-  const user = { name: "CAndy", age: 19, hunger: 100, alive: true };
+async function App() {
+  const user = await axios.get("http://localhost:8000");
+  const fabo = user.data[0];
+  console.log(fabo);
 
   return (
-    <FabProvider value={user}>
+    <FabProvider value={fabo}>
       <Tamagotchi />
     </FabProvider>
   );
