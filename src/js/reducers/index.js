@@ -1,10 +1,17 @@
 // A reducer takes two parameters: the current state and an action
 
 const initialState = {
-  articles: []
+  hunger: 100
 };
 
-function rootReducer(state = initialState, action) {
-  return state;
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case "HUNGER":
+      return {
+        hunger: state.hunger - 10
+      };
+    default:
+      return state;
+  }
 }
-export default rootReducer;
+export default reducer;

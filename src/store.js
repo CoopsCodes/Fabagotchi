@@ -1,7 +1,7 @@
 import { createStore } from "redux";
-import rootReducer from "../reducers/index";
+import reducer from "./js/reducers/index";
 
 // store is the bank of where the redux state gets kept
-const store = createStore(rootReducer);
+const store = createStore(reducer);
 
 export default store;
