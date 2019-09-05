@@ -1,7 +1,8 @@
 import React from "react";
-import Tamagotchi from "./Tamagotchi";
+import Tamagotchi from "./components/Tamagotchi";
 import "./App.css";
-import axios from 'axios';
+import { FabProvider } from "./context";
+// import axios from "axios";
 
 // setTimeout(async () => {
 //   const newFab = await callRulesApi(store.Fabagotchi)
@@ -10,7 +11,13 @@ import axios from 'axios';
 // }, 30000)
 
 function App() {
-  return <Tamagotchi />;
+  const user = { name: "CAndy", age: 19, hunger: 100, alive: true };
+
+  return (
+    <FabProvider value={user}>
+      <Tamagotchi />
+    </FabProvider>
+  );
 }
 
 export default App;

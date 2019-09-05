@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Buttons from "./Buttons";
+import Display from "./Display";
 
 export default class Tamagotchi extends Component {
   render() {
@@ -6,8 +8,8 @@ export default class Tamagotchi extends Component {
       <div>
         <h1>Feed me</h1>
         <div>
-          <button onClick={this.feed}>-</button>
-          <span>{this.props.hunger}</span>
+          <Display />
+          <Buttons />
         </div>
       </div>
     );
