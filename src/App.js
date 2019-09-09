@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tamagotchi from "./components/Tamagotchi";
-import "./App.css";
+// import "./App.css";
 import { FabProvider } from "./context";
 import axios from "axios";
 
@@ -10,13 +10,20 @@ import axios from "axios";
 //   store.Fabagotchi = newFab
 // }, 30000)
 
-async function App() {
-  const user = await axios.get("http://localhost:8000");
-  const fabo = user.data[0];
-  console.log(fabo);
+const App = () => {
+  const [fab, setFab] = useState({})
+
+  useEffect(() => {
+    async function fetchFab() {
+      const user = await axios.get("http://localhost:8000");
+      const fab = user.data[0];
+      setFab(fab);
+    }
+    fetchFab();
+  }, [])
 
   return (
-    <FabProvider value={fabo}>
+    <FabProvider value={fab}>
       <Tamagotchi />
     </FabProvider>
   );
