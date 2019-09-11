@@ -3,6 +3,7 @@ import Tamagotchi from "./components/Tamagotchi";
 // import "./App.css";
 import { FabProvider } from "./context";
 import axios from "axios";
+import applyRules from "./utils/applyRules";
 
 // setTimeout(async () => {
 //   const newFab = await callRulesApi(store.Fabagotchi)
@@ -11,22 +12,27 @@ import axios from "axios";
 // }, 30000)
 
 const App = () => {
-  const [fab, setFab] = useState({})
+  const [fab, setFab] = useState({});
 
   useEffect(() => {
     async function fetchFab() {
       const user = await axios.get("http://localhost:8000");
       const fab = user.data[0];
+      console.log("interval", fab);
       setFab(fab);
+      setInterval(() => {
+        let newFab = applyRules(fab);
+        setFab(newFab);
+      }, 2000);
     }
     fetchFab();
-  }, [])
+  }, []);
 
   return (
     <FabProvider value={fab}>
       <Tamagotchi />
     </FabProvider>
   );
-}
+};
 
 export default App;

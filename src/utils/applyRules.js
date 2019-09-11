@@ -1,7 +1,8 @@
-import axios from 'axios';
+const applyRules = fab => {
+  if (fab.hunger) {
+    fab.hunger += 1;
+  }
+  return fab;
+};
 
-const applyRules = () => {
-    setInterval()
-}
-
-export default applyRules
+export default applyRules;

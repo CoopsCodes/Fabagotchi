@@ -6,7 +6,7 @@ export default class Tamagotchi extends Component {
   render() {
     return (
       <div>
-        <h1>Feed me</h1>
+        <h1>Welcome to Fabagotchi</h1>
         <div>
           <Display />
           <Buttons />
