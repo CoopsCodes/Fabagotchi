@@ -1,10 +1,10 @@
 # Fabagotchi
 >***A joint project by***
 
-| Name  | Email |
-|-------|-------|
-|Andy Sims|acsims@tuta.io|
-|Cooper Viktor|im.cooperviktor@gmail.com|
+| Name          | Email                     |
+| ------------- | ------------------------- |
+| Andy Sims     | acsims@tuta.io            |
+| Cooper Viktor | im.cooperviktor@gmail.com |
 ---
 
 Our *~~Tamagotchi~~* **Fabagotchi** is an homage to the simple days of 90s browser games, gameboys, Pokémon and such awesome things.
@@ -36,6 +36,8 @@ But beware, if you dont look after it it'll die!
 ---
 
 # Design: first iteration
+
+**IMPORTANT: the statistics do not deterministically cause the tamagotchi to die, rather, they increase statistics like hunger that contribute to a total chance that the tamagotchi will die per iteration of the rules (e.g., every 30 seconds)**
 
 ## Backend
 

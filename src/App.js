@@ -16,16 +16,24 @@ const App = () => {
 
   useEffect(() => {
     async function fetchFab() {
+      console.log("fetching");
       const user = await axios.get("http://localhost:8000");
       const fab = user.data[0];
       console.log("interval", fab);
       setFab(fab);
-      setInterval(() => {
-        let newFab = applyRules(fab);
-        setFab(newFab);
-      }, 2000);
     }
     fetchFab();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFab(
+        Object.assign({}, fab, {
+          hunger: fab.hunger + 1
+        })
+      );
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
