@@ -1,46 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import Tamagotchi from "./components/Tamagotchi";
-// import "./App.css";
 import { FabProvider } from "./context";
 import axios from "axios";
-import applyRules from "./utils/applyRules";
 
-// setTimeout(async () => {
-//   const newFab = await callRulesApi(store.Fabagotchi)
-//   saveGame(newFab)
-//   store.Fabagotchi = newFab
-// }, 30000)
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
 
-const App = () => {
-  const [fab, setFab] = useState({});
+  fetchFab = async () => {
+    const user = await axios.get("http://localhost:8000");
+    this.setState({
+      fab: user.data[0]
+    })
+  }
 
-  useEffect(() => {
-    async function fetchFab() {
-      console.log("fetching");
-      const user = await axios.get("http://localhost:8000");
-      const fab = user.data[0];
-      console.log("interval", fab);
-      setFab(fab);
-    }
-    fetchFab();
-  }, []);
+  updateFab = () => {
+    const { name, hunger, age, alive } = this.state.fab;
+    this.setState({
+      fab: {
+        name,
+        hunger: hunger + 1,
+        age,
+        alive
+      }
+    })
+  }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFab(
-        Object.assign({}, fab, {
-          hunger: fab.hunger + 1
-        })
-      );
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  componentDidMount = () => {
+    this.fetchFab();
+    setInterval(this.updateFab, 1000)
+  }
 
-  return (
-    <FabProvider value={fab}>
-      <Tamagotchi />
-    </FabProvider>
-  );
-};
+  render = () => {
+    return (
+      <FabProvider value={this.state}>
+        <Tamagotchi />
+      </FabProvider>
+    )
+  }
+}
 
 export default App;
