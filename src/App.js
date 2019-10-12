@@ -23,7 +23,7 @@ class App extends Component {
         name,
         hunger: hunger + 1,
         age,
-        alive
+        alive: hunger >= 10 ? false : true
       }
     })
   }
