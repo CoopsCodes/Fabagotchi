@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   updateFab = () => {
-    const { name, hunger, age, alive } = this.state.fab;
+    const { name, hunger, age } = this.state.fab;
     this.setState({
       fab: {
         name,
