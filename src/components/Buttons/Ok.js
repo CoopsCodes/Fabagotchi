@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import FabContext from "../../context";
 
 export default function Ok() {
-  return <button>Ok</button>;
+  const data = useContext(FabContext);
+  const { feed } = data;
+
+  return <button onClick={ feed }>Ok</button>;
 }

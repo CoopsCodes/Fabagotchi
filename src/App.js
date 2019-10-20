@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   updateFab = () => {
-    const { name, hunger, age, alive } = this.state.fab;
+    const { name, hunger, age } = this.state.fab;
     this.setState({
       fab: {
         name,
@@ -26,11 +26,27 @@ class App extends Component {
         alive: hunger >= 10 ? false : true
       }
     })
+    if (!this.state.fab.alive) {
+      clearInterval(this.state.intervalID)
+    }
+  }
+
+  feed = () => {
+    const { name, hunger, age } = this.state.fab;
+    this.setState({
+      fab: {
+        name,
+        hunger: hunger > 1 ? hunger - 2 : hunger,
+        age,
+        alive: hunger >= 10 ? false : true
+      }
+    })
   }
 
   componentDidMount = () => {
     this.fetchFab();
-    setInterval(this.updateFab, 1000)
+    const intervalID = setInterval(this.updateFab, 1000)
+    this.setState({ intervalID, feed: this.feed })
   }
 
   render = () => {

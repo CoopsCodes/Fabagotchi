@@ -10,7 +10,7 @@ export default function Display() {
         <p>Name: {fab.name}</p>
         <p>Age: {fab.age}</p>
         <p>Hunger: {fab.hunger}</p>
-        {fab.alive ? <span role="img" aria-label="smiley">😎</span> : <span role="img" aria-label="smiley">💀</span>}
+        { fab.alive ? <span role="img" aria-label="smiley">😎</span> : <span role="img" aria-label="smiley">💀</span> }
       </div>
     );
   } else {
