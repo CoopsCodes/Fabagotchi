@@ -26,11 +26,15 @@ class App extends Component {
         alive: hunger >= 10 ? false : true
       }
     })
+    if (!this.state.fab.alive) {
+      clearInterval(this.state.intervalID)
+    }
   }
 
   componentDidMount = () => {
     this.fetchFab();
-    setInterval(this.updateFab, 1000)
+    const intervalID = setInterval(this.updateFab, 1000)
+    this.setState({ intervalID })
   }
 
   render = () => {
