@@ -31,10 +31,22 @@ class App extends Component {
     }
   }
 
+  feed = () => {
+    const { name, hunger, age } = this.state.fab;
+    this.setState({
+      fab: {
+        name,
+        hunger: hunger > 1 ? hunger - 2 : hunger,
+        age,
+        alive: hunger >= 10 ? false : true
+      }
+    })
+  }
+
   componentDidMount = () => {
     this.fetchFab();
     const intervalID = setInterval(this.updateFab, 1000)
-    this.setState({ intervalID })
+    this.setState({ intervalID, feed: this.feed })
   }
 
   render = () => {
